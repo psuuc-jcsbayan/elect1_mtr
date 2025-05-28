@@ -5,7 +5,7 @@
                 {{ __('You are logged in!') }}
             </h2>
 
-            <!-- Categories Navigation
+            Categories Navigation
             <nav class="space-x-4">
                 <a href="{{ route('threads.index', ['category' => 'general']) }}" 
                    class="text-black hover:underline">
@@ -20,7 +20,7 @@
                     Entertainment
                 </a>
             </nav>
-        </div> -->
+        </div>
     </x-slot>
 
     <div class="py-12">

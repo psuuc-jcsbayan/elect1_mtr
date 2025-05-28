@@ -9,7 +9,6 @@
         <div>
             <label>Email:</label>
             <input type="email" name="email" value="{{ old('email') }}" required autofocus>
-            <input type="hidden" name="role" value="admin">
         </div>
 
         <div>

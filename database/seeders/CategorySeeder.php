@@ -12,8 +12,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create(['name' => 'General Discussion']);
-        Category::create(['name' => 'Announcements']);
-        Category::create(['name' => 'Feedback']);
+        Category::create(['name' => 'Others']);
     }
 }
+

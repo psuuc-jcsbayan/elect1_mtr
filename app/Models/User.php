@@ -2,28 +2,31 @@
 
 namespace App\Models;
 
-
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    protected $fillable = ['name', 'email', 'password', 'role'];
 
-    protected $fillable = ['name', 'email', 'password'];
+    protected $hidden = ['password', 'remember_token'];
 
-    // Add this method to define the relationship
-    public function threads(): HasMany
+    public function threads()
     {
         return $this->hasMany(Thread::class);
-        
     }
 
-    public function replies(): HasMany
+    public function replies()
     {
         return $this->hasMany(Reply::class);
     }
-    
+
+    public function reports()
+    {
+        return $this->hasMany(Report::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
 }
