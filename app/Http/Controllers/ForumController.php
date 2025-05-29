@@ -16,6 +16,11 @@ class ForumController extends Controller
         $query = Thread::where('is_hidden', false)->with('user', 'category', 'replies');
         $filter = $request->query('filter', 'recent');
 
+        // New: Filter by category if provided
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
         if ($filter === 'viewed') {
             $query->orderBy('view_count', 'desc');
         } elseif ($filter === 'replies') {
@@ -25,6 +30,7 @@ class ForumController extends Controller
         }
 
         $threads = $query->withCount('replies')->paginate(10);
+
         $categories = Category::all();
 
         return view('forum.index', compact('threads', 'categories', 'filter'));

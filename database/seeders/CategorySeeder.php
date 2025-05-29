@@ -7,12 +7,24 @@ use App\Models\Category;
 
 class CategorySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        Category::create(['name' => 'Others']);
+        $categories = [
+            ['id' => 1, 'name' => 'IT Sector'],
+            ['id' => 2, 'name' => 'Food'],
+            ['id' => 3, 'name' => 'Fashion'],
+            ['id' => 4, 'name' => 'Sports'],
+            ['id' => 5, 'name' => 'Health'],
+            ['id' => 6, 'name' => 'Travel'],
+            ['id' => 7, 'name' => 'Education'],
+            ['id' => 8, 'name' => 'Entertainment'],
+            ['id' => 9, 'name' => 'Others'],
+        ];
+
+        foreach ($categories as $category) {
+            Category::updateOrCreate(['id' => $category['id']], ['name' => $category['name']]);
+        }
     }
 }
+
 

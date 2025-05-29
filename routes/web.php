@@ -5,7 +5,12 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => redirect()->route('login'))->name('home');
+
+Route::get('/', function () {
+    return auth()->check() ? redirect()->route('forum.index') : view('welcome');
+})->name('home');
+
+// Route::get('/', fn() => redirect()->route('login'))->name('home');
 
 // Authentication Routes
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

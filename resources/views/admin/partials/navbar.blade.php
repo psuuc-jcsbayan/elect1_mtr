@@ -27,7 +27,7 @@
                         👤 {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="{{ route('forum.index') }}">← Return to Forum</a></li>
+                        <li><a class="dropdown-item" href="{{ route('forum.index') }}">Visit Forum</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <form method="POST" action="{{ route('logout') }}">

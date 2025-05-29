@@ -1,0 +1,31 @@
++ mga kulang pa
+ - dapat may branding or name ng app
+ - tanggalin 0 replies
+ - may mga most recent, most viewed most replies
+
++ need linisin
+ - design
+ - nav bar designs and buttons
+ - update profile for user & admin
+ - guest dashboard
+ - back buttons kung saan-saan pumupunta hahaha
+ - buttons ng admin
+
++ lalagyan ng folder & files na nagawa
+ - admin folder
+ - auth folder
+ - forum folder
+ - ForumController, Auth Controller, Admin Controller
+ - database, seeders, middleware, web, policies
+
++ info
+ - ADMIN INFO: galing sa tinker
+   - email: admin@exampl.com
+   - pass: password123
+
+
+
+
+
+
+

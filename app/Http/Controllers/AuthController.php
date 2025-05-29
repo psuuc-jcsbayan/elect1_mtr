@@ -119,4 +119,6 @@ class AuthController extends Controller
         Log::info('User logged out', ['user_id' => $userId]);
         return redirect()->route('login');
     }
+    
+    
 }

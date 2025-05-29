@@ -30,7 +30,22 @@
                         <td>{{ $report->user->name }}</td>
                         <td>{{ $report->created_at->format('Y-m-d H:i') }}</td>
                         <td>
-                            <a href="{{ route('admin.reports.hide', $report->reply) }}" class="btn btn-danger btn-sm">Hide Reply</a>
+                            <!-- Hide Reply -->
+                            <form action="{{ route('admin.reply.hide', $report->reply) }}" method="POST" style="display:inline;">
+                                @csrf
+                                <button class="btn btn-warning btn-sm" onclick="return confirm('Are you sure you want to hide this reply?')">
+                                    Hide Reply
+                                </button>
+                            </form>
+
+                            <!-- Delete Reply -->
+                            <form action="{{ route('forum.reply.destroy', $report->reply) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this reply permanently?')">
+                                    Delete Reply
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
